@@ -17,8 +17,8 @@ DEFAULT_GID=1000
 # Function to check if the ARM user has ownership of the requested folder
 check_folder_ownership() {
     local check_dir="$1"  # Get the folder path from the first argument
-    local folder_uid=$(stat -c "%u" "$check_dir")
-    local folder_gid=$(stat -c "%g" "$check_dir")
+    local folder_uid=$(stat -f "%u" "$check_dir")
+    local folder_gid=$(stat -f "%g" "$check_dir")
 
     echo "Checking ownership of $check_dir"
 
